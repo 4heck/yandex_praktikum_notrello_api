@@ -13,7 +13,12 @@ class CreatedAtMixin(models.Model):
 
 class CreatedByMixin(models.Model):
     created_by = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="%(class)s" + "s"
+        User,
+        on_delete=models.CASCADE,
+        related_name="%(class)s" + "s",
+        editable=False,
+        blank=True,
+        null=True,
     )
 
     class Meta:

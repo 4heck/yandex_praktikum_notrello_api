@@ -4,7 +4,9 @@ from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 from rest_framework.routers import SimpleRouter
 
+from api.views.column import ColumnViewSet
 from api.views.project import ProjectViewSet
+from api.views.task import TaskViewSet
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -29,5 +31,9 @@ urlpatterns = [
 ]
 
 router = SimpleRouter()
+
 router.register("project", ProjectViewSet, basename="project")
+router.register("column", ColumnViewSet, basename="column")
+router.register("task", TaskViewSet, basename="column")
+
 urlpatterns += router.urls
