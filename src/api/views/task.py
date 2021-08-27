@@ -10,7 +10,6 @@ from core.models import Task
 # from rest_framework.decorators import action
 
 
-
 class TaskViewSet(
     GenericViewSet,
     RetrieveModelMixin,
