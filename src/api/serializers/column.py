@@ -17,11 +17,8 @@ class ColumnCompactSerializer(serializers.ModelSerializer):
 
 
 class ColumnTasksSerializer(serializers.ModelSerializer):
-    tasks = serializers.SerializerMethodField()
+    tasks = TaskSerializer(many=True)
 
     class Meta:
         model = Column
         fields = ("id", "title", "position", "tasks")
-
-    def get_tasks(self, obj):
-        return TaskSerializer(obj.tasks.all(), many=True).data

@@ -1,17 +1,10 @@
-from rest_framework.mixins import (
-    CreateModelMixin,
-    DestroyModelMixin,
-    RetrieveModelMixin,
-    UpdateModelMixin,
-)
+from rest_framework.mixins import (CreateModelMixin, DestroyModelMixin,
+                                   RetrieveModelMixin, UpdateModelMixin)
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import GenericViewSet
 
-from api.serializers.column import (
-    ColumnCompactSerializer,
-    ColumnSerializer,
-    ColumnTasksSerializer,
-)
+from api.serializers.column import (ColumnCompactSerializer, ColumnSerializer,
+                                    ColumnTasksSerializer)
 from core.models import Column
 
 

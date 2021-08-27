@@ -5,7 +5,7 @@ from core.models import Project
 
 
 class ProjectSerializer(serializers.ModelSerializer):
-    columns = serializers.SerializerMethodField()
+    columns = ColumnSerializer(many=True)
 
     class Meta:
         model = Project
@@ -14,9 +14,6 @@ class ProjectSerializer(serializers.ModelSerializer):
             "title",
             "columns",
         )
-
-    def get_columns(self, obj):
-        return ColumnSerializer(obj.columns.all(), many=True).data
 
 
 class ProjectCompactSerializer(serializers.ModelSerializer):
