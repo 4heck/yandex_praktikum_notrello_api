@@ -83,3 +83,7 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 100,
 }
+
+# Celery Config
+CELERY_BROKER_URL = os.environ.get("CELERY_BROKER", "redis://0.0.0.0:6379/0")
+CELERY_BROKER_BACKEND = os.environ.get("CELERY_BROKER", "redis://0.0.0.0:6379/0")

@@ -34,7 +34,7 @@ class Task(BaseModelMixin):
     all_objects = AllTaskManager()
 
     def __str__(self):
-        return self.title
+        return f"Task {self.title}"
 
     class Meta:
         ordering = ["position"]
